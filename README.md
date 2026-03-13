@@ -4,9 +4,10 @@ An ESP32-based smart plant watering system controlled via Amazon Alexa voice com
 
 ## Project Structure
 Alexa_Water_Pump/
-    ├── platformio.ini        # PlatformIO config + build flags
-    ├── credentials.ini       
-    ├── .gitignore
-    ├── src/
-    │   └── main.cpp          # Main firmware
-    └── README.md
+
+                    ├── platformio.ini        # PlatformIO config + build flags
+                    ├── credentials.ini       
+                    ├── .gitignore
+                    ├── src/
+                    │   └── main.cpp          # Main firmware
+                    └── README.md
