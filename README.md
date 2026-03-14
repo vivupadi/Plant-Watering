@@ -31,3 +31,9 @@ Alexa_Water_Pump/
                     ├── src/
                     │   └── main.cpp          # Main firmware
                     └── README.md
+
+## Future Scope 
+
+1. Soil dryness sensor
+2. Isolated Server Setup
+3. Dashboard for control 
