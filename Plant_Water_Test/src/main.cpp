@@ -27,9 +27,20 @@ void loop() {
 #include <WiFi.h>
 #include <SinricPro.h>
 #include <SinricProSwitch.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
 
 #define RELAY_PIN    26
+#define MOISTURE_PIN 34
 #define BAUD_RATE    115200
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // Credentials from build_flags
 const char* WIFI_SSID_VAL   = WIFI_SSID;
@@ -44,7 +55,7 @@ bool onPowerState(const String &deviceId, bool &state) {
 
   // Turn pump ON
   digitalWrite(RELAY_PIN, HIGH);
-  delay(2000);  // run for 2 seconds
+  delay(3000);  // run for 2 seconds
   // Turn pump OFF
   digitalWrite(RELAY_PIN, LOW);
 
@@ -81,8 +92,27 @@ void setup() {
   Serial.begin(BAUD_RATE);
   setupWiFi();
   setupSinricPro();
+
+  //Display setup
+  Wire.begin(32, 33);  // SDA=32, SCL=33
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.clearDisplay();
 }
 
 void loop() {
   SinricPro.handle();
+  int moisture = analogRead(MOISTURE_PIN);
+  int percent = map(moisture, 0, 2800, 0, 100);  // 0=dry, 2800=wet
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);
+  display.println("Moisture in soil:");
+  display.setTextSize(2);
+  display.setCursor(0, 16);
+  display.print(percent);
+  display.println("%");
+  display.display();
+  Serial.printf("Moisture Sensor: %d\n", moisture);
 }
