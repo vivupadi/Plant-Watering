@@ -25,7 +25,7 @@ An ESP32-based smart plant watering system controlled via Amazon Alexa voice com
 
 ### Block Diagram
 
-[til!][[Block Diagram](https://github.com/vivupadi/Plant-Watering/blob/main/Plant_Water_Test/Block%20Diagram.jpg)]
+[til!][(https://github.com/vivupadi/Plant-Watering/blob/main/Plant_Water_Test/Block%20Diagram.jpg)]
 
 ## Project Structure
 Alexa_Water_Pump/
