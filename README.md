@@ -10,9 +10,11 @@ An ESP32-based smart plant watering system controlled via Amazon Alexa voice com
 2. ESP32 Dev Kit
 3. 5V Immersible water pump
 4. Relay Switch(JQC-3FF-S-Z)
-5. USB cable to power ESP32
-6. 4 x AA batteries as water-pump power source
-7. Resistive Soil moisture sensor (for future addition - To check soil dryness before turning ON the water pump
+5. 0.96 Inch OLED Display module
+6. USB cable to power ESP32
+7. 4 x AA batteries as water-pump power source
+8. Resistive Soil moisture sensor (HW-080- To check soil dryness/moisture before turning ON the water pump)
+9. 10k Resistor
 
 ### Software
 
@@ -21,6 +23,9 @@ An ESP32-based smart plant watering system controlled via Amazon Alexa voice com
 3. PlatformIO
 4. Wifi connectivity
 
+### Block Diagram
+
+[til!][https://github.com/vivupadi/Plant-Watering/Block Diagram.jpg]
 
 ## Project Structure
 Alexa_Water_Pump/
@@ -34,6 +39,5 @@ Alexa_Water_Pump/
 
 ## Future Scope 
 
-1. Soil dryness sensor
-2. Isolated Server Setup
-3. Dashboard for control 
+1. Isolated Server Setup
+2. Dashboard for control 
