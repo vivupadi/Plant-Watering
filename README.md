@@ -1,6 +1,6 @@
 # Alexa-controlled Plant Watering System
 
-An ESP32-based smart plant watering system controlled via Amazon Alexa voice commands. Built using Sinric Pro for cloud connectivity, with a relay module to safely drive a water pump.
+An ESP32-based smart plant watering system controlled via Amazon Alexa voice commands. Built using Sinric Pro for cloud connectivity, with a relay module to safely drive a water pump. A resistive-moisture sensor is added to prevent overwatering and monitor moisture content in the soil.
 
 ## Tech Stack
 
