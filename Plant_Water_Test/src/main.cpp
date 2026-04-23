@@ -52,7 +52,7 @@ const char* DEVICE_ID_VAL   = DEVICE_ID;
 // Helper function to display status messages
 void displayStatus(const char* line1, const char* line2 = "", const char* line3 = "") {
   display.clearDisplay();
-  display.setTextSize(1);
+  display.setTextSize(1.5);
   display.setTextColor(WHITE);
   
   display.setCursor(0, 0);
@@ -78,7 +78,7 @@ bool onPowerState(const String &deviceId, bool &state) {
 
    // Check moisture level first
   int moisture = analogRead(MOISTURE_PIN);
-  int percent = map(moisture, 0, 2800, 0, 100);
+  int percent = map(moisture, 0, 4095, 0, 100);
 
   Serial.printf("Current moisture: %d%%\n", percent);
 
@@ -154,18 +154,15 @@ void setup() {
 
 void loop() {
   SinricPro.handle();
-  int moisture = analogRead(MOISTURE_PIN);
-  int percent = map(moisture, 0, 2800, 0, 100);  // 0=dry, 2800=wet
 
-  display.clearDisplay();
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0, 0);
-  display.println("Moisture in soil:");
-  display.setTextSize(2);
-  display.setCursor(0, 16);
-  display.print(percent);
-  display.println("%");
-  display.display();
+  int moisture = analogRead(MOISTURE_PIN);
+  int percent = map(moisture, 0, 4095, 0, 100);
+
+  Serial.printf("Current moisture: %d%%\n", percent);
+
+  char moistureStr[20];
+  sprintf(moistureStr, "Moisture: %d%%", percent);
+
   Serial.printf("Moisture Sensor: %d\n", moisture);
+  displayStatus("Soil Moisture:", moistureStr);
 }
