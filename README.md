@@ -14,7 +14,7 @@ An ESP32-based smart plant watering system controlled via Amazon Alexa voice com
 6. USB cable to power ESP32
 7. 4 x AA batteries as water-pump power source
 8. Resistive Soil moisture sensor (HW-080- To check soil dryness/moisture before turning ON the water pump)
-9. 10k Resistor
+9. LM393 comparator (or 10k Resistor across the Resistive Soil Moisture Sensor)
 
 ### Software
 
