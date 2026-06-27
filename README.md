@@ -39,5 +39,7 @@ Alexa_Water_Pump/
 
 ## Future Scope 
 
-1. Isolated Server Setup
-2. Dashboard for control 
+1. Water Level Measurement using Ultrasonic Sensor on the reservoir tank
+2. Dashboard to view the sensor readings & control
+3. Isolated Server Setup
+4. Dashboard for control 
