@@ -39,7 +39,8 @@ Alexa_Water_Pump/
 
 ## Future Scope 
 
-1. Water Level Measurement using Ultrasonic Sensor on the reservoir tank
-2. Dashboard to view the sensor readings & control
-3. Isolated Server Setup
-4. Dashboard for control 
+1. Seperate Frontend to control water flow using controls (An optional setup apart from Alexa Controls)
+2. Water Level Measurement using Ultrasonic Sensor on the reservoir tank
+3. Dashboard to view the sensor readings & control
+4. Isolated Server Setup
+5. Dashboard for control 
